@@ -38,7 +38,7 @@ export default function Chat() {
         const token = localStorage.getItem('token');
         if (!token) return;
 
-        const ws = new WebSocket(`ws://localhost:8080/ws?token=${token}`);
+        const ws = new WebSocket(`wss://pulsechat-be-production.up.railway.app/ws?token=${token}`);
         socketRef.current = ws;
 
         ws.onopen = () => {
